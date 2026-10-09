@@ -28,5 +28,6 @@ A BYOK (Bring Your Own Key) terminal AI coding agent that keeps its attention fo
    mypy
 
    # Tests
+
    pytest
    ```
