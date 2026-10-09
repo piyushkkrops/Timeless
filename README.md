@@ -6,14 +6,34 @@ A BYOK (Bring Your Own Key) terminal AI coding agent that keeps its attention fo
 
 `minimum relevant context` → `focused reasoning` → `targeted fix` → `verification`
 
+## Installation
+
+```bash
+pip install timeless
+```
+
+### Quick Setup
+
+Configure your preferred model provider and API key:
+
+```bash
+timeless setup
+```
+
+Run a task:
+
+```bash
+timeless "Fix failing unit tests in test_auth.py"
+```
+
 ## Development Setup
 
 ### Prerequisites
 - Python 3.13+
 
-### Installation & Verification
+### Local Development Installation
 
-1. Install local editable package:
+1. Install in editable mode:
    ```bash
    pip install -e .
    ```
@@ -28,6 +48,5 @@ A BYOK (Bring Your Own Key) terminal AI coding agent that keeps its attention fo
    mypy
 
    # Tests
-
    pytest
    ```
