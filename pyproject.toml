@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "timeless"
+version = "0.1.0"
+description = "An AI coding agent for evidence-driven debugging, targeted code exploration, and verified fixes"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = []
+
+[project.scripts]
+timeless = "timeless.cli.main:main"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+# ─────────────────────────────────────────────
+# Ruff
+# ─────────────────────────────────────────────
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+
+# ─────────────────────────────────────────────
+# Pytest
+# ─────────────────────────────────────────────
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+
+
+# ─────────────────────────────────────────────
+# Mypy
+# ─────────────────────────────────────────────
+
+[tool.mypy]
+python_version = "3.13"
+mypy_path = "src"
+packages = ["timeless"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_return_any = true
+warn_unused_ignores = true
